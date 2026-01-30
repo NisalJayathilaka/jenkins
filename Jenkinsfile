@@ -33,10 +33,10 @@ pipeline {
         jdk 'JDK17'
     }
 
-    environment {
-        APP_NAME = "jenkins"
-//         DOCKER_IMAGE = "nipuni1994/email-filter-jenkins-docker-aws"
-    }
+//     environment {
+//         APP_NAME = "jenkins"
+// //         DOCKER_IMAGE = "nipuni1994/email-filter-jenkins-docker-aws"
+//     }
 
     stages {
 
