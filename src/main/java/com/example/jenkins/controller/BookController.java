@@ -24,7 +24,7 @@ public class BookController {
     @GetMapping("/all")
     public List<Book> getAllBooks(){
         List<Book> bookList = bookService.getAllBooks();
-        String a  = "nisal";
+        String a  = "nisalasass";
         return bookList;
     }
 }
