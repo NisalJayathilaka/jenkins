@@ -22,7 +22,7 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                cat 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
