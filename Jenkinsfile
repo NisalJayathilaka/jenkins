@@ -22,18 +22,18 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
         // ✅ ADD SONARQUBE HERE
        stage('SonarQube Analysis') {
-                   steps {
-                       withSonarQubeEnv('sonar-server') { // name from Jenkins config
-                           sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:4.0.0.4121:sonar -Dsonar.projectKey=jenkins'
-                       }
-                   }
+           steps {
+               withSonarQubeEnv('sonar-server') {   // replace with your exact SonarQube installation name
+                   bat 'mvn sonar:sonar -Dsonar.projectKey=jenkins'
                }
+           }
+       }
 
 
 //        stage("Quality Gate") {
