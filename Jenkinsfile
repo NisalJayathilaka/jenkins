@@ -29,7 +29,7 @@ pipeline {
         // ✅ ADD SONARQUBE HERE
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('sonar-server') {
                     bat 'mvn sonar:sonar -Dsonar.projectKey=jenkins'
                 }
             }
