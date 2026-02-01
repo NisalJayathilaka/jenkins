@@ -27,13 +27,14 @@ pipeline {
         }
 
         // ✅ ADD SONARQUBE HERE
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonar-server') {
-                    bat 'mvn sonar:sonar -Dsonar.projectKey=jenkins'
-                }
-            }
-        }
+       stage('SonarQube Analysis') {
+           steps {
+               withSonarQubeEnv('sonar-server') {   // replace with your exact SonarQube installation name
+                   sh 'mvn sonar:sonar -Dsonar.projectKey=jenkins'
+               }
+           }
+       }
+
 
 //        stage("Quality Gate") {
 //            steps {
