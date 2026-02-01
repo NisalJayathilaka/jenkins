@@ -27,13 +27,13 @@ pipeline {
         }
 
         // ✅ ADD SONARQUBE HERE
-//         stage('SonarQube Analysis') {
-//             steps {
-//                 withSonarQubeEnv('SonarQube') {
-//                     bat 'mvn sonar:sonar -Dsonar.projectKey=email-service'
-//                 }
-//             }
-//         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    bat 'mvn sonar:sonar -Dsonar.projectKey=jenkins'
+                }
+            }
+        }
 
 //        stage("Quality Gate") {
 //            steps {
