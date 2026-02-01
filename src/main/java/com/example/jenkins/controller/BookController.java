@@ -25,6 +25,8 @@ public class BookController {
     public List<Book> getAllBooks(){
         List<Book> bookList = bookService.getAllBooks();
         String a  = "nisalasass";
+        String str = null;
+        System.out.println(str.length());
         return bookList;
     }
 }
