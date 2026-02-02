@@ -8,7 +8,7 @@ pipeline {
 
     environment {
         APP_NAME = "jenkins"
-        DOCKER_IMAGE = "nipuni1994/email-filter-jenkins-docker-aws"
+        DOCKER_IMAGE = "nisaljaya/jenkins"
     }
 
     stages {
