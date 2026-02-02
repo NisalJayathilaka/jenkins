@@ -6,10 +6,10 @@ pipeline {
         jdk 'JDK17'
     }
 
-//     environment {
-//         APP_NAME = "jenkins"
-// //         DOCKER_IMAGE = "nipuni1994/email-filter-jenkins-docker-aws"
-//     }
+    environment {
+        APP_NAME = "jenkins"
+        DOCKER_IMAGE = "nipuni1994/email-filter-jenkins-docker-aws"
+    }
 
     stages {
 
@@ -56,27 +56,27 @@ pipeline {
 //             }
 //         }
 
-//         stage('Docker Build') {
-//             steps {
-//                 bat 'docker build -t %DOCKER_IMAGE%:latest .'
-//             }
-//         }
+        stage('Docker Build') {
+            steps {
+                bat 'docker build -t %DOCKER_IMAGE%:latest .'
+            }
+        }
 
-//         stage('Docker Push') {
-//             steps {
-//                 bat 'docker push %DOCKER_IMAGE%:latest'
-//             }
-//         }
+        stage('Docker Push') {
+            steps {
+                bat 'docker push %DOCKER_IMAGE%:latest'
+            }
+        }
 
-//         stage('Docker Run') {
-//             steps {
-//                 bat '''
-//                 docker stop %APP_NAME% || echo Container not running
-//                 docker rm %APP_NAME% || echo Container not found
-//                 docker run -d --name %APP_NAME% -p 8096:8096 %DOCKER_IMAGE%:latest
-//                 '''
-//             }
-//         }
+        stage('Docker Run') {
+            steps {
+                bat '''
+                docker stop %APP_NAME% || echo Container not running
+                docker rm %APP_NAME% || echo Container not found
+                docker run -d --name %APP_NAME% -p 8096:8096 %DOCKER_IMAGE%:latest
+                '''
+            }
+        }
     }
 
     post {
